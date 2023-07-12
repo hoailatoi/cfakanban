@@ -1,0 +1,83 @@
+{
+  "name": "cfakanban",
+  "version": "0.0.2",
+  "description": "Far Eastern New Apparel CFA Kanban Platform.",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "wait-on ./dist/main.js && electron .",
+    "nbe:i": "pnpm install",
+    "nfe:i": "cd app/renderer && pnpm install",
+    "b:e": "rimraf dist && webpack",
+    "b:ui": "cd app/renderer && pnpm build",
+    "dev": "concurrently \"pnpm build:electron\" \"pnpm start\"",
+    "dev:ui": "cd app/renderer && pnpm dev",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "r:win": "rimraf release && electron-builder build -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phamminhphuc/cfakanban.git"
+  },
+  "keywords": [
+    "Far",
+    "Eastern",
+    "New",
+    "Apparel",
+    "CFA",
+    "Kanban",
+    "Platform"
+  ],
+  "author": "Far Eastern New Apparel VN",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phamminhphuc/cfakanban/issues"
+  },
+
+
+  "homepage": "https://github.com/hoailatoi/cfakanban#readme",
+  "devDependencies": {
+    "@electron/asar": "^3.2.3",
+    "@electron/osx-sign": "^1.0.4",
+    "concurrently": "^7.6.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "electron": "^23.1.3",
+    "electron-builder": "^23.6.0",
+    "electron-is-dev": "^2.0.0",
+    "rimraf": "^4.4.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.4",
+    "wait-on": "^7.0.1",
+    "webpack": "^5.76.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "electron-updater": "^5.3.0"
+  },
+  "build": {
+    "appId": "com.fe.cfapp",
+    "productName": "CFA Kanban Application",
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://10.20.31.36/cfakanbanupdate/latest/",
+        "publishAutoUpdate": true
+      }
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "icon": "build/icons/icon.png",
+      "target": "nsis"
+    },
+    "nsis": {
+      "artifactName": "${productName}-${version}.${ext}",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "differentialPackage": true
+    }
+  }
+}

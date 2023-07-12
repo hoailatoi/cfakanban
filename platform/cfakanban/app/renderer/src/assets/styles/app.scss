@@ -1,0 +1,124 @@
+#root {
+    /* max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem; */
+    /* text-align: center; */
+    min-height: 100vh;
+}
+
+.logo {
+    will-change: filter;
+    transition: filter 1000ms;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 1.5em #646cffaa);
+}
+
+.logo.react:hover {
+    filter: drop-shadow(0 0 1.5em #61dafbaa);
+}
+
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+        animation: logo-spin infinite 20s linear;
+    }
+}
+
+.card {
+    padding: 2em;
+}
+
+.read-the-docs {
+    color: #888;
+}
+
+.table-container {
+    position: relative;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: #f2f2f2;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+table th:first-child,
+table td:first-child {
+    border-left: none;
+}
+
+table th:last-child,
+table td:last-child {
+    border-right: none;
+}
+
+table th:not(.first-row),
+table td:not(:last-child) {
+    border-right: none;
+}
+
+table th.first-row,
+table td.first-row {
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: 500;
+}
+
+.waiting-color {
+    background: #76b852;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #76b852, #8DC26F);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(90deg, #76b852 0%, #8DC26F 100%);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fefefe;
+}
+
+.checking-color {
+    background: #e5aa00;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #e5aa00, #ffd700);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(90deg, #e5aa00 0%, #ffd700 100%);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fefefe;
+}
+
+.fail-color {
+    background: #d72638;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #d72638, #eb1e51);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(90deg, #d72638 0%, #eb1e51 100%);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fefefe;
+}
